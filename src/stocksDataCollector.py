@@ -21,7 +21,7 @@ for stockTiker in stockList:
     low = str( round(stock.info["dayLow"],2))
     high = str(round (stock.info["dayHigh"],2))
     # add f for string formatting/ f комбинирует старические строки с переменными
-    sql =INSERT INTO Stocks (date_stocks, name_stock, max_day, min_day) VALUES (now() ,"{stockTiker}", {high},{low});'
+    sql =f'INSERT INTO Stocks (date_stocks, name_stock, max_day, min_day) VALUES (now() ,"{stockTiker}", {high},{low});'
     print (sql)
     cur.execute(sql)
 
